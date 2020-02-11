@@ -40,6 +40,10 @@ WELCOME WINDOW
     font-weight: bold;
   }
 
+  .welcome-container p{
+    margin: 30px 20px;
+  }
+
   .start-btn{
     background-color: #FF6A25;
     border:0;
