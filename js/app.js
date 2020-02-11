@@ -186,20 +186,14 @@ const game = {
     
     },
 
-    shuffleCards: function(array){
-        console.log('shuffle is running')
-        for (let i = array.length; i>0; i--){
-            const j = Math.floor(Math.random()*(i+1));
-            [array[i], array[j]]= [array[j], array[i]];
-        }
-            return (this.loteriaCards)
-    },
-
     gameplayLoop: function(){
         //shuffle objects in card array
         game.shuffleCards(game.loteriaCards);
-        console.log(game.loteriaCards)
+        game.createPlayerBoard(game.loteriaCards);
+        game.shuffleCards(game.loteriaCards);
+        game.createCPUBoard(game.loteriaCards);
         
+        //load game board
         //initialize boards for user and CPU
         //generate game board for user that they see - randomize photos to table
         //shuffle deck
@@ -209,20 +203,41 @@ const game = {
         //put used card into a new array?
         //print loteria when theres a winner
     },
+    shuffleCards: function(array){
+        console.log('shuffle is running')
+        for (let i = array.length; i>0; i--){
+            const j = Math.floor(Math.random()*(i+1));
+            [array[i], array[j]]= [array[j], array[i]];
+        }
+            return (game.loteriaCards)
+    },
+    createPlayerBoard: function(array){
+        //select 16 into an array for game.player.board
+        console.log('creating board for player')
+        for (let i=0; i<=15; i++){
+            game.player.board.push(game.loteriaCards[i])
+        }
+        console.log(game.player.board)
 
-    // createBoards: function(array){
-    //     for (let i=0; i<=15; i++){
+    },
 
-    //     }
+    createCPUBoard: function(array){
+        //select 16 into an array for game.CPU.board
+        console.log('creating board for CPU')
+        for (let i=0; i<=15; i++){
+            game.CPU.board.push(game.loteriaCards[i])
+        }
+        console.log(game.CPU.board)
+    },
+}
+    
+       
 
-
-        //select 16 into an array for player.board + CPU.board
-        //push them into arrays
-        //load game board
-},
+    
 
 
 game.init()
+
 //game.shuffleCards(game.loteriaCards);
 //console.log(game.loteriaCards);
 
