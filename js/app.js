@@ -192,6 +192,9 @@ const game = {
     cardsInPlay: [
 
     ],
+    currentCard:[],
+
+    usedCards:[],
     
     //initialize game
     init: function(){
@@ -212,14 +215,21 @@ const game = {
         game.shuffleCards(game.loteriaCards);
         game.playerBoardSelects(game.loteriaCards);
         game.shuffleCards(game.loteriaCards);
-        game.cpuBoardSelects();
+        game.cpuBoardSelects(game.loteriaCards);
         game.createPlayerBoard(game.player.board);
         game.loadGameBoard(game.loadGameBoard);
+        game.drawCards(game.loteriaCards)
+       
     },
+        //what do with CPU board?????
+        //match cards
+        //assess if theres a match for user or CPU
+        //put used card into a new array?
+        //print loteria when theres a winner
+
 
     createPlayerBoard: function(array){
-        console.log('ARRAY' + array);
-        //generate game board for user that they see
+        //generate visual game board for user
         let squares = document.querySelectorAll('td');
         for (let i=0; i<game.player.board.length; i++){
             // let cardId = (game.player.board[i])
@@ -233,23 +243,41 @@ const game = {
             }
         }
     }, 
-    
+
     loadGameBoard: function(){
-        //load game board
+        //load visual game board for player on main screen
         let welcomeContainer = document.querySelector('.welcome-container').style.display = "none"
         document.querySelector('table').style.display = 'flex'
         document.querySelector('aside').style.display = 'flex'
     },
-        //initialize boards for user and CPU
 
 
-        
-        //shuffle deck
-        //draw cards/flip cards
-        //match cards
-        //assess if theres a match for user or CPU
-        //put used card into a new array?
-        //print loteria when theres a winner
+    drawCards: function(array){
+        //initial shuffle for draw deck
+        game.shuffleCards(array);
+        game.cardsInPlay.push(array);
+        let deck = document.getElementById('deck');
+        deck.addEventListener('click', game.checkPlayerMatch);
+        deck.addEventListener('click', game.checkCPUMatch)
+    },   
+    checkPlayerMatch: function(){
+        deck.src = game.cardsInPlay[0][0].url
+        for (let i=0; i<game.player.board.length; i++){
+            if (game.cardsInPlay[0][0] === game.player.board[i]){
+                console.log('we have a match!')
+            }
+        }
+    },
+    checkCPUMatch: function(){
+        deck.src = game.cardsInPlay[0][0].url
+        for (let i=0; i<game.CPU.board.length; i++){
+            if (game.cardsInPlay[0][0] === game.CPU.board[i]){
+                console.log('CPU has a match!')
+            }
+        }
+    },
+
+
     
     shuffleCards: function (array){
         console.log('shuffle is running')
@@ -257,7 +285,7 @@ const game = {
             const j = Math.floor(Math.random()*(i + 1));
             [array[i], array[j]]= [array[j], array[i]];
         }
-            return (game.loteriaCards)
+        return (game.loteriaCards)
     },
     playerBoardSelects: function(array){
         //select 16 into an array for game.player.board
@@ -265,7 +293,7 @@ const game = {
         for (let i=0; i<=15; i++){
             game.player.board.push(game.loteriaCards[i])
         }
-        console.log(game.player.board)
+        return game.player.board
 
     },
     cpuBoardSelects: function (array){
@@ -274,7 +302,7 @@ const game = {
         for (let i=0; i<=15; i++){
             game.CPU.board.push(game.loteriaCards[i])
         }
-        console.log(game.CPU.board)
+        return game.CPU.board
     },
 }
     
