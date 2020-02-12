@@ -189,11 +189,8 @@ const game = {
         [0,5,10,15],
         [3,6,9,12]
     ],
-    cardsInPlay: [
 
-    ],
-    currentCard:[],
-
+    cardsInPlay: [],
     usedCards:[],
     
     //initialize game
@@ -202,9 +199,9 @@ const game = {
         let table = document.querySelector('table').style.display = "none";
         let aside = document.querySelector('aside').style.display = "none";
         let welcome = document.getElementById('welcome');
-        welcome.innerHTML = "WELCOME!!"
-        let instructions = document.getElementById('instructions')
-        instructions.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        welcome.innerHTML = "WELCOME!!";
+        let instructions = document.getElementById('instructions');
+        instructions.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         let startBtn = document.querySelector('.start-btn');
         startBtn.addEventListener('click', game.gameplayLoop);
     
@@ -212,19 +209,20 @@ const game = {
 
     gameplayLoop: function(){
         //shuffle objects in card array
-        game.shuffleCards(game.loteriaCards);
+        game.shuffleBoards(game.loteriaCards);
         game.playerBoardSelects(game.loteriaCards);
-        game.shuffleCards(game.loteriaCards);
+        game.shuffleBoards(game.loteriaCards);
         game.cpuBoardSelects(game.loteriaCards);
         game.createPlayerBoard(game.player.board);
         game.loadGameBoard(game.loadGameBoard);
-        game.drawCards(game.loteriaCards)
+        game.shuffleDeck(game.loteriaCards);
+        console.log(game.cardsInPlay)
+        game.drawCards(game.cardsInPlay);
+        console.log(game.usedCards)
        
     },
         //what do with CPU board?????
-        //match cards
-        //assess if theres a match for user or CPU
-        //put used card into a new array?
+        //how to overlay the icon on the object selected???? 
         //print loteria when theres a winner
 
 
@@ -251,16 +249,31 @@ const game = {
         document.querySelector('aside').style.display = 'flex'
     },
 
+    shuffleDeck: function(array){
+        console.log('shuffling deck')
+        for (let i = array.length - 1; i>0; i--){
+            const j = Math.floor(Math.random()*(i + 1));
+            [array[i], array[j]]= [array[j], array[i]];
+        }
+        game.cardsInPlay.push(array);
+        return (game.cardsInPlay)
+    },
 
     drawCards: function(array){
-        //initial shuffle for draw deck
-        game.shuffleCards(array);
-        game.cardsInPlay.push(array);
+        //drawing cards
         let deck = document.getElementById('deck');
         deck.addEventListener('click', game.checkPlayerMatch);
         deck.addEventListener('click', game.checkCPUMatch)
+        deck.addEventListener('click', game.removeUsedCard);
     },   
+
+    removeUsedCard: function(){
+        let usedCard =  (game.cardsInPlay[0]).shift()
+        game.usedCards.push(usedCard)
+    },
+
     checkPlayerMatch: function(){
+        //check for match on board
         deck.src = game.cardsInPlay[0][0].url
         for (let i=0; i<game.player.board.length; i++){
             if (game.cardsInPlay[0][0] === game.player.board[i]){
@@ -269,6 +282,7 @@ const game = {
         }
     },
     checkCPUMatch: function(){
+        //check for match on board
         deck.src = game.cardsInPlay[0][0].url
         for (let i=0; i<game.CPU.board.length; i++){
             if (game.cardsInPlay[0][0] === game.CPU.board[i]){
@@ -277,9 +291,7 @@ const game = {
         }
     },
 
-
-    
-    shuffleCards: function (array){
+    shuffleBoards: function (array){
         console.log('shuffle is running')
         for (let i = array.length - 1; i>0; i--){
             const j = Math.floor(Math.random()*(i + 1));
@@ -287,6 +299,7 @@ const game = {
         }
         return (game.loteriaCards)
     },
+
     playerBoardSelects: function(array){
         //select 16 into an array for game.player.board
         console.log('creating array for player board')
