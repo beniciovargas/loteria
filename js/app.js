@@ -2,163 +2,163 @@ const game = {
     loteriaCards:[
         {
             name: 'alacran',
-            url:''
+            url:'images/loteria_cards/alacran.jpg'
         },{
             name: 'arana',
-            url:''
+            url:'images/loteria_cards/arana.jpg'
         },{
             name: 'arpa',
-            url:''
+            url:'images/loteria_cards/arpa.jpg'
         },{
             name: 'bailador',
-            url:''
+            url:'images/loteria_cards/bailador.jpg'
         },{
             name: 'bandera',
-            url:''
+            url:'images/loteria_cards/bandera.jpg'
         },{
             name: 'bandolon',
-            url:''
+            url:'images/loteria_cards/bandolon.jpg'
         },{
             name: 'barril',
-            url:''
+            url:'images/loteria_cards/barril.jpg'
         },{
             name: 'borracho',
-            url:''
+            url:'images/loteria_cards/borracho.jpg'
         },{
             name: 'bota',
-            url:''
+            url:'images/loteria_cards/bota.jpg'
         },{
             name: 'botella',
-            url:''
+            url:'images/loteria_cards/botella.jpg'
         },{
             name: 'calavera',
-            url:''
+            url:'images/loteria_cards/calavera.jpg'
         },{
             name: 'camaron',
-            url:''
+            url:'images/loteria_cards/camaron.jpg'
         },{
             name: 'campana',
-            url:''
+            url:'images/loteria_cards/campana.jpg'
         },{
             name: 'cantarito',
-            url:''
+            url:'images/loteria_cards/cantarito.jpg'
         },{
             name: 'catrin',
-            url:''
+            url:'images/loteria_cards/catrin.jpg'
         },{
             name: 'cazo',
-            url:''
+            url:'images/loteria_cards/cazo.jpg'
         },{
             name: 'chalupa',
-            url:''
+            url:'images/loteria_cards/chalupa.jpg'
         },{
             name: 'corazon',
-            url:''
+            url:'images/loteria_cards/corazon.jpg'
         },{
             name: 'corona',
-            url:''
+            url:'images/loteria_cards/corona.jpg'
         },{
             name: 'cotorro',
-            url:''
+            url:'images/loteria_cards/cotorro.jpg'
         },{
             name: 'dama',
-            url:''
+            url:'images/loteria_cards/dama.jpg'
         },{
             name: 'diablito',
-            url:''
+            url:'images/loteria_cards/diablito.jpg'
         },{
             name: 'domador',
-            url:''
+            url:'images/loteria_cards/domador.jpg'
         },{
             name: 'escalera',
-            url:''
+            url:'images/loteria_cards/escalera.jpg'
         },{
             name: 'estrella',
-            url:''
+            url:'images/loteria_cards/estrella.jpg'
         },{
             name: 'gallo',
-            url:''
+            url:'images/loteria_cards/gallo.jpg'
         },{
             name: 'garza',
-            url:''
+            url:'images/loteria_cards/gallo.jpg'
         },{
             name: 'gorrito',
-            url:''
+            url:'images/loteria_cards/gorrito.jpg'
         },{
             name: 'jaras',
-            url:''
+            url:'images/loteria_cards/jaras.jpg'
         },{
             name:'luna',
-            url:''
+            url:'images/loteria_cards/luna.jpg'
         },{
             name:'maceta',
-            url:''
+            url:'images/loteria_cards/maceta.jpg'
         },{
             name: 'mano',
-            url:''
+            url:'images/loteria_cards/mano.jpg'
         },{
             name: 'melon',
-            url:''
+            url:'images/loteria_cards/melon.jpg'
         },{
             name: 'muerte',
-            url:''
+            url:'images/loteria_cards/muerte.jpg'
         },{
             name: 'mundo',
-            url:''
+            url:'images/loteria_cards/mundo.jpg'
         },{
             name: 'musico',
-            url:''
+            url:'images/loteria_cards/musico.jpg'
         },{
             name: 'nopal',
-            url:''
+            url:'images/loteria_cards/nopal.jpg'
         },{
             name: 'pajaro',
-            url:''
+            url:'images/loteria_cards/pajaro.jpg'
         },{
             name: 'palma',
-            url:''
+            url:'images/loteria_cards/palma.jpg'
         },{
             name: 'paraguas',
-            url:''
+            url:'images/loteria_cards/paraguas.jpg'
         },{
             name:'pera',
-            url:''
+            url:'images/loteria_cards/pera.jpg'
         },{
             name: 'pescado',
-            url:''
+            url:'images/loteria_cards/pescado.jpg'
         },{
             name: 'pino',
-            url:''
+            url:'images/loteria_cards/pino.jpg'
         },{
             name: 'rana',
-            url:''
+            url:'images/loteria_cards/rana.jpg'
         },{
             name: 'rosa',
-            url:''
+            url:'images/loteria_cards/rosa.jpg'
         },{
             name: 'sandia',
-            url:''
+            url:'images/loteria_cards/sandia.jpg'
         },{
             name: 'sirena',
-            url:''
+            url:'images/loteria_cards/sirena.jpg'
         },{
             name: 'sol',
-            url:''
+            url:'images/loteria_cards/sol.jpg'
         },{
             name: 'soldado',
-            url:''
+            url:'images/loteria_cards/soldado.jpg'
         },{
             name: 'tambor',
-            url:''
+            url:'images/loteria_cards/tambor.jpg'
         },{
             name: 'valiente',
-            url:''
+            url:'images/loteria_cards/valiente.jpg'
         },{
             name: 'venado',
-            url:''
+            url:'images/loteria_cards/venado.jpg'
         },{
             name: 'violoncello',
-            url:''
+            url:'images/loteria_cards/violoncello.jpg'
         }
     ],
     player:{
@@ -189,6 +189,9 @@ const game = {
         [0,5,10,15],
         [3,6,9,12]
     ],
+    cardsInPlay: [
+
+    ],
     
     //initialize game
     init: function(){
@@ -209,14 +212,26 @@ const game = {
         game.shuffleCards(game.loteriaCards);
         game.playerBoardSelects(game.loteriaCards);
         game.shuffleCards(game.loteriaCards);
-        game.cpuBoardSelects(game.loteriaCards);
-        game.createPlayerBoard(game.loteriaCards);
+        game.cpuBoardSelects();
+        game.createPlayerBoard(game.player.board);
         game.loadGameBoard(game.loadGameBoard);
     },
 
-    createPlayerBoard: function(){
-        
-
+    createPlayerBoard: function(array){
+        console.log('ARRAY' + array);
+        //generate game board for user that they see
+        let squares = document.querySelectorAll('td');
+        for (let i=0; i<game.player.board.length; i++){
+            // let cardId = (game.player.board[i])
+            for (let j=0; j<squares.length; j++) {
+                if (j === i){
+                    // console.log(squares[i]);
+                    let image = document.createElement('img');
+                    image.setAttribute('src', array[i].url)
+                    squares[i].appendChild(image);
+                }
+            }
+        }
     }, 
     
     loadGameBoard: function(){
@@ -225,13 +240,12 @@ const game = {
         document.querySelector('table').style.display = 'flex'
         document.querySelector('aside').style.display = 'flex'
     },
-        //load game board
         //initialize boards for user and CPU
 
 
-        //generate game board for user that they see - randomize photos to table
+        
         //shuffle deck
-        //draw cards
+        //draw cards/flip cards
         //match cards
         //assess if theres a match for user or CPU
         //put used card into a new array?
@@ -239,8 +253,8 @@ const game = {
     
     shuffleCards: function (array){
         console.log('shuffle is running')
-        for (let i = array.length; i>0; i--){
-            const j = Math.floor(Math.random()*(i+1));
+        for (let i = array.length - 1; i>0; i--){
+            const j = Math.floor(Math.random()*(i + 1));
             [array[i], array[j]]= [array[j], array[i]];
         }
             return (game.loteriaCards)
