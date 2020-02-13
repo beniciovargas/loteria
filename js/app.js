@@ -232,8 +232,10 @@ const game = {
         console.log('initializing....')
         let table = document.querySelector('table').style.display = "none";
         let aside = document.querySelector('aside').style.display = "none";
+        document.querySelector('.player-win-screen').style.display = "none";
+        document.querySelector('.cpu-win-screen').style.display = "none";
         let welcome = document.getElementById('welcome');
-        welcome.innerHTML = "WELCOME!!";
+        welcome.innerHTML = "welcome";
         let instructions = document.getElementById('instructions');
         instructions.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         let startBtn = document.querySelector('.start-btn');
@@ -253,8 +255,7 @@ const game = {
        
     },
         
-        //how to overlay the icon on the object selected???? 
-        //modal for announcing a winner???
+//modal for announcing a winner???
 
     shuffleBoards: function (array){
         //shuffle objects in card array to create boards
@@ -362,29 +363,29 @@ const game = {
             //EVAL FOR WINNING COMBO
             //CHECK FOR HORIZONTAL MATCHES
             if (game.player.board[0].value === 'match' && game.player.board[1].value === 'match' && game.player.board[2].value === 'match' && game.player.board[3].value=== 'match'){
-                console.log(`PLAYER WINS!`)
+                game.playerWinScreen()
             }else if (game.player.board[4].value === 'match' && game.player.board[5].value === 'match' && game.player.board[6].value === 'match' && game.player.board[7].value=== 'match'){
-                console.log(`PLAYER WINS!`)
+                game.playerWinScreen()
             }else if (game.player.board[8].value === 'match' && game.player.board[9].value === 'match' && game.player.board[10].value === 'match' && game.player.board[11].value=== 'match'){
-                console.log(`PLAYER WINS!`)
+                game.playerWinScreen()
             }else if (game.player.board[12].value === 'match' && game.player.board[13].value === 'match' && game.player.board[14].value === 'match' && game.player.board[15].value=== 'match'){
-                console.log(`PLAYER WINS!`)
+                game.playerWinScreen()
             }
             //CHECK FOR VERTICAL MATCHES
             else if (game.player.board[0].value === 'match' && game.player.board[4].value === 'match' && game.player.board[8].value === 'match' && game.player.board[12].value === 'match'){
-                console.log(`PLAYER WINS!`)
+                game.playerWinScreen()
             }else if (game.player.board[1].value === 'match' && game.player.board[5].value === 'match' && game.player.board[9].value === 'match' && game.player.board[13] === 'match'){
-                console.log(`PLAYER WINS!`)
+                game.playerWinScreen()
             }else if (game.player.board[2].value === 'match' && game.player.board[6].value === 'match' && game.player.board[10].value === 'match' && game.player.board[14].value === 'match'){
-                console.log(`PLAYER WINS!`)
+                game.playerWinScreen()
             }else if (game.player.board[3].value === 'match' && game.player.board[7].value === 'match' && game.player.board[11].value === 'match' && game.player.board[15].value === 'match'){
-                console.log(`PLAYER WINS!`)    
+                game.playerWinScreen()    
             }
             //CHECK FOR DIAGONAL MATCHES
             else if (game.player.board[0].value === 'match' && game.player.board[5].value === 'match' && game.player.board[10].value === 'match' && game.player.board[15].value === 'match'){
-                console.log(`PLAYER WINS!`)
+                game.playerWinScreen()
             }else if (game.player.board[3].value === 'match' && game.player.board[6].value === 'match' && game.player.board[9].value === 'match' && game.player.board[12].value === 'match'){
-                console.log(`PLAYER WINS!`)
+                game.playerWinScreen()
             }
         },
 
@@ -392,53 +393,81 @@ const game = {
             //EVAL FOR WINNING COMBO
             //CHECK FOR HORIZONTAL MATCHES
             if (game.CPU.board[0].value === 'match' && game.CPU.board[1].value === 'match' && game.CPU.board[2].value === 'match' && game.CPU.board[3].value === 'match'){
-            console.log(`CPU WINS!`)
+                game.cpuWinScreen()
             }else if (game.CPU.board[4].value === 'match' && game.CPU.board[5].value === 'match' && game.CPU.board[6].value === 'match' && game.CPU.board[7].value === 'match'){
-                console.log(`CPU WINS!`)
+                game.cpuWinScreen()
             }else if (game.CPU.board[8].value === 'match' && game.CPU.board[9].value === 'match' && game.CPU.board[10].value === 'match' && game.CPU.board[11].value === 'match'){
-                console.log(`CPU WINS!`)
+                game.cpuWinScreen()
             }else if (game.CPU.board[12].value === 'match' && game.CPU.board[13].value === 'match' && game.CPU.board[14].value === 'match' && game.CPU.board[15].value === 'match'){
-                console.log(`CPU WINS!`)
+                game.cpuWinScreen()
             }
             //CHECK FOR VERTICAL MATCHES
             else if (game.CPU.board[0].value === 'match' && game.CPU.board[4].value === 'match' && game.CPU.board[8].value === 'match' && game.CPU.board[12].value === 'match'){
-                console.log(`CPU WINS!`)
+                game.cpuWinScreen()
             }else if (game.CPU.board[1].value === 'match' && game.CPU.board[5].value === 'match' && game.CPU.board[9].value === 'match' && game.CPU.board[13].value === 'match'){
-                console.log(`CPU WINS!`)
+                game.cpuWinScreen()
             }else if (game.CPU.board[2].value === 'match' && game.CPU.board[6].value === 'match' && game.CPU.board[10].value === 'match' && game.CPU.board[14].value === 'match'){
-                console.log(`CPU WINS!`)
+                game.cpuWinScreen()
             }else if (game.CPU.board[3].value === 'match' && game.CPU.board[7].value === 'match' && game.CPU.board[11].value === 'match' && game.CPU.board[15].value === 'match'){
-                console.log(`CPU WINS!`)    
+                game.cpuWinScreen()    
             }
             //CHECK FOR DIAGONAL MATCHES
             else if (game.CPU.board[0].value === 'match' && game.CPU.board[5].value === 'match' && game.CPU.board[10].value === 'match' && game.CPU.board[15].value === 'match'){
-                console.log(`CPU WINS!`)
+                game.cpuWinScreen()
             }else if (game.CPU.board[3].value === 'match' && game.CPU.board[6].value === 'match' && game.CPU.board[9].value === 'match' && game.CPU.board[12].value === 'match'){
-                console.log(`CPU WINS!`)
+                game.cpuWinScreen()
             }
         },
+                playerWinScreen: function(){
+                    document.querySelector('table').style.display = "none";
+                    document.querySelector('aside').style.display = "none";
+                    document.querySelector('.player-win-screen').style.display = "block";
+                    let playerWin = document.getElementById('player-win');
+                    playerWin.innerHTML = "FELICIDADES!!";
+                    let playerWinText = document.getElementById('player-win-text');
+                    playerWinText.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+                },
+                cpuWinScreen: function(){
+                    document.querySelector('table').style.display = "none";
+                    document.querySelector('aside').style.display = "none";
+                    document.querySelector('.cpu-win-screen').style.display = "block";
+                    let cpuWin = document.getElementById('cpu-win');
+                    cpuWin.innerHTML = "SORRY, CPU WINS!!";
+                    let cpuWinText = document.getElementById('cpu-win-text');
+                    cpuWinText.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+                },
 
-        
-
-    //     /* horizontal combos */
-    //     [0,1,2,3],
-    //     [4,5,6,7],
-    //     [8,9,10,11],
-    //     [12,13,14,15]
-
-    //     /* vertical combos */
-    //     [0,4,8,12],
-    //     [1,5,9,13],
-    //     [2,6,10,14],
-    //     [3,7,11,15]
-
-    //     /*diagonal combos*/
-    //     [0,5,10,15],
-    //     [3,6,9,12]
+                weTied: function(){
+                    
+                }
 }
     
 game.init()
+// // Get the modal
+// var modal = document.getElementById("myModal");
 
+// // Get the button that opens the modal
+// var btn = document.getElementById("myBtn");
+
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
+
+// // When the user clicks the button, open the modal 
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
 
 
 
