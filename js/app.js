@@ -222,32 +222,13 @@ const game = {
     
         board:[],
     },
-    // winningCombos: [
-
-    //     /* horizontal combos */
-    //     [0,1,2,3],
-    //     [4,5,6,7],
-    //     [8,9,10,11],
-    //     [12,13,14,15]
-
-    //     /* vertical combos */
-        
-    //     [0,4,8,12],
-    //     [1,5,9,13],
-    //     [2,6,10,14],
-    //     [3,7,11,15]
-
-    //     /*diagonal combos*/
-
-    //     [0,5,10,15],
-    //     [3,6,9,12]
-    // ],
 
     cardsInPlay: [],
     usedCards:[],
     
-    //initialize game
+    
     init: function(){
+    //initialize game
         console.log('initializing....')
         let table = document.querySelector('table').style.display = "none";
         let aside = document.querySelector('aside').style.display = "none";
@@ -261,7 +242,6 @@ const game = {
     },
 
     gameplayLoop: function(){
-        //shuffle objects in card array
         game.shuffleBoards(game.loteriaCards);
         game.playerBoardSelects(game.loteriaCards);
         game.shuffleBoards(game.loteriaCards);
@@ -272,12 +252,12 @@ const game = {
         game.drawCards(game.cardsInPlay);
        
     },
-        //*****what do with CPU board?????==>assign array value like tic tac toe?
-        //***EVAL FOR WINNING COMBO */
+        
         //how to overlay the icon on the object selected???? 
         //modal for announcing a winner???
 
     shuffleBoards: function (array){
+        //shuffle objects in card array to create boards
         console.log('shuffle is running')
         for (let i = array.length - 1; i>0; i--){
             const j = Math.floor(Math.random()*(i + 1));
@@ -323,6 +303,7 @@ const game = {
         document.querySelector('aside').style.display = 'flex'
     },
     shuffleDeck: function(array){
+        //shuffle objects in card array for drawing from
         console.log('shuffling deck')
         for (let i = array.length - 1; i>0; i--){
             const j = Math.floor(Math.random()*(i + 1));
@@ -347,9 +328,20 @@ const game = {
                 if (game.cardsInPlay[0][0] === game.player.board[i]){
                     console.log('we have a match!')
                     game.player.board[i].value = 'match'
+                    game.addCircle(i)
                 }
             }
         },
+            addCircle: function(index){
+                console.log('trying to create circle', index)
+                let tableCells =  document.getElementsByClassName('carta');
+
+                let circle = document.createElement('img');
+                circle.setAttribute('src', 'images/circle.png')
+                circle.setAttribute('class', 'match-circle')
+                tableCells[index].appendChild(circle);
+            },
+
         checkCPUMatch: function(){
             //check for match on board
             deck.src = game.cardsInPlay[0][0].url
@@ -360,12 +352,14 @@ const game = {
                 }
             }
         },
+
         removeUsedCard: function(){
             let usedCard =  (game.cardsInPlay[0]).shift()
             game.usedCards.push(usedCard)
         },
 
         checkForPlayerWin: function(){
+            //EVAL FOR WINNING COMBO
             //CHECK FOR HORIZONTAL MATCHES
             if (game.player.board[0].value === 'match' && game.player.board[1].value === 'match' && game.player.board[2].value === 'match' && game.player.board[3].value=== 'match'){
                 console.log(`PLAYER WINS!`)
@@ -393,9 +387,9 @@ const game = {
                 console.log(`PLAYER WINS!`)
             }
         },
-        
+
         checkForCPUWin: function(){
-        
+            //EVAL FOR WINNING COMBO
             //CHECK FOR HORIZONTAL MATCHES
             if (game.CPU.board[0].value === 'match' && game.CPU.board[1].value === 'match' && game.CPU.board[2].value === 'match' && game.CPU.board[3].value === 'match'){
             console.log(`CPU WINS!`)
@@ -422,8 +416,25 @@ const game = {
             }else if (game.CPU.board[3].value === 'match' && game.CPU.board[6].value === 'match' && game.CPU.board[9].value === 'match' && game.CPU.board[12].value === 'match'){
                 console.log(`CPU WINS!`)
             }
-        }
-   
+        },
+
+        
+
+    //     /* horizontal combos */
+    //     [0,1,2,3],
+    //     [4,5,6,7],
+    //     [8,9,10,11],
+    //     [12,13,14,15]
+
+    //     /* vertical combos */
+    //     [0,4,8,12],
+    //     [1,5,9,13],
+    //     [2,6,10,14],
+    //     [3,7,11,15]
+
+    //     /*diagonal combos*/
+    //     [0,5,10,15],
+    //     [3,6,9,12]
 }
     
 game.init()
