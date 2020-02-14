@@ -6,6 +6,8 @@ Lotería is bingo-like game where each player is given a 4x4 board with a random
 ## How to Play?
 For this digital version, a user will receive a board with randomized images. The deck to draw from is to the left of the board. To draw, the user will click on the deck. With each draw, if there is a match, a small circluar icon will get placed on that selected image. The user will be playing against the computer and see who will get to "loteria" first!
 
+![alt text](https://github.com/beniciovargas/loteria/blob/master/assets/loteria-how-to.gif)
+
 ## Stetch Goals for Future Iterations(in no particular order):
 * Add reset functionality
 * Ability to play different modes, like brownout or a certain kind of "pozo" instead of the traditional row. 
