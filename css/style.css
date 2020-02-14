@@ -61,6 +61,7 @@ html, body {
   }
   body {
     background-color:#6314DA;
+    background-size: cover;
     color: #ffffff;
     
 
@@ -72,10 +73,13 @@ html, body {
   h1 {
    
     font-family: "Bungee Shade", cursive;
-    font-size: 75px;
+    font-size: 80px;
     margin-top: 20px;
     margin-bottom: 65px;
     text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    
   }
   main{
     display: flex;
@@ -90,7 +94,7 @@ WELCOME WINDOW
   .welcome-container {
     background-color: #F1C62E;
     height: 700px;
-    width: 600px;
+    width: 800px;
     border-radius: 3%;
     font-family:'Open Sans', sans-serif;
     padding: 0 30px;
@@ -102,14 +106,17 @@ WELCOME WINDOW
   }
   .welcome-container #welcome{
     font-family: 'Lilita One', cursive;
-    font-size: 55px;
+    font-size: 60px;
     text-align: center;
     font-weight: 400;
+    text-shadow: 2px 1px #6314DA;
   }
-
+  
   .welcome-container p{
-    margin: 50px 20px;
-    font-size: 18px;
+    margin: 30px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px #6314da;
   }
 
   .start-btn{
@@ -118,13 +125,17 @@ WELCOME WINDOW
     border-radius: 5%;
     color: white;
     font-family:'Open Sans', sans-serif;
-    width: 100px;
+    font-size: 16px;
+    font-weight: 900;
+    width: 130px;
     height: 35px;
     text-transform: uppercase;
     margin: 30px;
+    text-shadow: 0.5px 0.5px #6314da;
   }
   .how-to{
-    width: 400px;
+    width: 600px;
+    margin: 10px;
   }
 /*===================
 DECK
@@ -136,7 +147,7 @@ aside{
 }
 
 aside img{
-  width:250px;
+  width:275px;
 }
 
 /*=========================
@@ -180,110 +191,81 @@ WIN SCREENS
   border-radius: 5%;
   font-family:'Open Sans', sans-serif;
   margin: 50px;
-  padding: 50px 30px;
+  padding: 40px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .player-win-screen h2{
   font-family: 'Lilita One', cursive;
   font-size: 45px;
-  text-align: center;
   font-weight: 400;
+  margin-top: 10px;
+  text-align: center;
+  text-shadow: 2px 2px #6314DA;
+  margin: 70px 0;
 }
 
-.player-win-screen p{
-  margin: 30px 20px;
-  font-size: 18px;
+.player-win-screen .win{
+  width: 250px;
 }
 
 .cpu-win-screen {
   background-color: #F1C62E;
-  height: 500px;
-  width: 400px;
+  height: 400px;
+  width: 450px;
   border-radius: 5%;
   font-family:'Open Sans', sans-serif;
   margin: 50px;
   padding: 50px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cpu-win-screen h2{
   font-family: 'Lilita One', cursive;
   font-size: 45px;
   text-align: center;
   font-weight: 400;
+  text-shadow: 2px 2px #6314DA;
+  margin: 70px 0;
 }
 
-.cpu-win-screen p{
-  margin: 30px 20px;
-  font-size: 18px;
+.tie-screen {
+  background-color: #F1C62E;
+  height: 400px;
+  width: 450px;
+  border-radius: 5%;
+  font-family:'Open Sans', sans-serif;
+  margin: 50px;
+  padding: 50px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tie-screen h2{
+  font-family: 'Lilita One', cursive;
+  font-size: 45px;
+  text-align: center;
+  font-weight: 400;
+  text-shadow: 2px 2px #6314DA;
+  margin: 70px 0;
 }
 
-/*=============== 
-MODAL 
-================*/
-/* The Modal (background)
-.modal {
-  display: none; /* Hidden by default 
-  position: fixed; /* Stay in place 
-  z-index: 1; /* Sit on top 
-  padding-top: 100px; /* Location of the box
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width 
-  height: 100%; /* Full height
-  overflow: auto; /* Enable scroll if needed 
-  background-color: rgb(0,0,0); /* Fallback color
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity 
-}
-
-/* Modal Content */
-/* .modal-content {
-  position: relative;
-  background-color: lightgray;
-  margin: auto;
-  padding: 0;
-  border: none;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
-} */
-
-/* Add Animation */
-/* @-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
-}
-
-/* The Close Button 
-.close {
+.play-again-btn{
+  background-color: #FF6A25;
+  border:0;
+  border-radius: 5%;
   color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  font-family:'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  width: 130px;
+  height: 35px;
+  text-transform: uppercase;
+  margin: 30px;
+  text-shadow: 0.5px 0.5px #6314da;
 }
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-} */
