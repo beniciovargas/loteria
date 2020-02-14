@@ -8,6 +8,9 @@ For this digital version, a user will receive a board with randomized images. Th
 
 ![alt text](https://github.com/beniciovargas/loteria/blob/master/assets/loteria-how-to.gif)
 
+## Wireframe
+![alt text](https://github.com/beniciovargas/loteria/blob/master/assets/loteria_wireframe.png)
+
 ## Stetch Goals for Future Iterations(in no particular order):
 * Add reset functionality
 * Ability to play different modes, like brownout or a certain kind of "pozo" instead of the traditional row. 
