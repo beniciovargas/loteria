@@ -325,6 +325,7 @@ WIN SCREENS
 
   .play-again-btn{
     margin: 15px;
+    line-height: .5;
   }
   .player-win-screen{
     height: 300px;
