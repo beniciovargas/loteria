@@ -300,8 +300,10 @@ WIN SCREENS
   .welcome-container img{
     width: 250px
   }
-
-  aside img{
+  .start-btn{
+    margin: 15px;
+  }
+  aside #deck{
     width: 100px;
   }
 
@@ -320,6 +322,9 @@ WIN SCREENS
     width: 40px;
   }
 
+  .play-again-btn{
+    margin: 15px;
+  }
   .player-win-screen{
     height: 300px;
     width: 330px;
