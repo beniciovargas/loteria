@@ -73,12 +73,11 @@ html, body {
   h1 {
    
     font-family: "Bungee Shade", cursive;
-    font-size: 80px;
-    margin-top: 20px;
-    margin-bottom: 65px;
+    font-size: 75px;
+    margin-top: 15px;
+    margin-bottom: 40px;
     text-align: center;
     letter-spacing: 2px;
-    line-height: 1.5;
     
   }
   main{
@@ -305,6 +304,7 @@ WIN SCREENS
   }
   aside #deck{
     width: 100px;
+    height: 160px;
   }
 
   td{
@@ -328,6 +328,8 @@ WIN SCREENS
   .player-win-screen{
     height: 300px;
     width: 330px;
+    margin: 40px;
+    padding: 20px 10px;
 
   }
 
@@ -347,6 +349,8 @@ WIN SCREENS
   .cpu-win-screen {
     height: 300px;
     width: 330px;
+    margin: 40px;
+    padding: 20px 10px;
   }
 
   .cpu-win-screen h2{	
@@ -356,6 +360,8 @@ WIN SCREENS
   .tie-screen {
     height: 300px;
     width: 330px;
+    margin: 40px;
+    padding: 20px 10px;
   }
 
   .tie-screen h2{	
