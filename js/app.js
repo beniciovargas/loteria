@@ -470,7 +470,7 @@ const game = {
                     let playAgainBtn = document.createElement('button');
                     playAgainBtn.innerHTML = 'play again';
                     playAgainBtn.setAttribute('class', 'play-again-btn');
-                    // playAgainBtn.addEventListener('click', game.reset)
+                    playAgainBtn.addEventListener('click', game.reset)
                     playerWin.appendChild(playAgainBtn);
                 },
                 cpuWinScreen: function(){
@@ -483,7 +483,7 @@ const game = {
                     let playAgainBtn = document.createElement('button');
                     playAgainBtn.innerHTML = 'play again';
                     playAgainBtn.setAttribute('class', 'play-again-btn');
-                    // playAgainBtn.addEventListener('click', game.reset)
+                    playAgainBtn.addEventListener('click', game.reset)
                     cpuWin.appendChild(playAgainBtn);
                 },
                 tieScreen: function(){
@@ -496,7 +496,7 @@ const game = {
                     let playAgainBtn = document.createElement('button');
                     playAgainBtn.innerHTML = 'play again';
                     playAgainBtn.setAttribute('class', 'play-again-btn');
-                    // playAgainBtn.addEventListener('click', game.reset)
+                    playAgainBtn.addEventListener('click', game.reset)
                     tieScreen.appendChild(playAgainBtn);
                 },
 
@@ -514,20 +514,31 @@ const game = {
                     }
 
                 },
+
+
     reset: function(){
-        document.querySelector('.tie-screen').style.display = "none"; 
-        document.querySelector('.cpu-win-screen').style.display = "none";
-        document.querySelector('.player-win-screen').style.display = "none";
-        game.player.board = [];
-        console.log(game.player.board)
-        game.CPU.board = [];
-        console.log(game.CPU.board)
-        game.cardsInPlay = [];
-        console.log(game.cardsInPlay)
-        game.usedCards = [];
-        console.log(game.usedCards)
-        game.gameplayLoop();
+        location.reload();
+        // let table = document.querySelector('table').style.display = "none";
+        // let aside = document.querySelector('aside').style.display = "none";
+        // document.querySelector('.player-win-screen').style.display = "none";
+        // document.querySelector('.cpu-win-screen').style.display = "none";
+        // document.querySelector('.tie-screen').style.display= "none";
+        
+        // game.player.board = [ ];
+        // console.log(game.player.board)
+        // game.CPU.board = [ ];
+        // console.log(game.CPU.board)
+        // game.cardsInPlay = [ ];
+        // console.log(game.cardsInPlay)
+        // game.usedCards = [ ];
+        // console.log(game.usedCards)
+        // game.loteriaCards.value = 'null'
+
+        // return game.gameplayLoop(game.loteriaCards)
+
+       
     }
+    
 }
     
 game.init()
